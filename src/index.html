@@ -8,15 +8,44 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <div id="app">
-      <h1>Lift Simulation</h1>
-      <label for="floors">Number of Floors:</label>
-      <input type="number" id="floors" />
-      <label for="lifts">Number of Lifts:</label>
-      <input type="number" id="lifts" />
-      <button id="generate-ui">Generate UI</button>
-      <div id="ui"></div>
+    <section>
+      <div class="container">
+        <div class="form">
+          <h2 class="heading">Lift Simulation</h2>
+          <div class="input__box">
+            <input
+              type="number"
+              id="floors"
+              required="required"
+              maxlength="10"
+            />
+            <label for="floors">Number of Floors</label>
+          </div>
+          <div class="input__box">
+            <input
+              type="number"
+              id="lifts"
+              required="required"
+              maxlength="15"
+            />
+            <label for="lifts">Number of Lifts</label>
+          </div>
+          <div class="input__box">
+            <input
+              type="submit"
+              value="Generate UI"
+              class="generate__lift__simulation__ui"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="lift__simulation__ui">
+      <div class="back__btn">
+        <button class="previous__page">Back</button>
+      </div>
     </div>
+
     <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>

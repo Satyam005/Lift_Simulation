@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  --color-gray-400: #dddddd;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #223243;
+}
+
+.container {
+  padding: 50px;
+  border-radius: 20px;
+  border: 8px solid #223243;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.35),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.container .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.heading {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  font-size: 3rem;
+}
+
+.container .form .input__box {
+  position: relative;
+  width: 300px;
+}
+
+.container .form .input__box input {
+  padding: 12px 10px 12px 48px;
+  border: none;
+  width: 100%;
+  background: #223243;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-weight: 300;
+  border-radius: 25px;
+  font-size: 1rem;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+  outline: none;
+}
+
+.container .form .input__box label {
+  position: absolute;
+  left: 0;
+  padding: 12px 10px 12px 48px;
+  pointer-events: none;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: 0.5s;
+  letter-spacing: 0.05rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.container .form .input__box input:valid ~ label,
+.container .form .input__box input:focus ~ label {
+  color: #00dfc4;
+  border: 1px solid #00dfc4;
+  background: #223243;
+  transform: translateX(25px) translateY(-7px);
+  font-size: 0.6rem;
+  padding: 0 8px;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+}
+
+.container .form .input__box input:valid,
+.container .form .input__box input:focus {
+  border: 1px solid #00dfc4;
+}
+
+.container .form .input__box input[type="submit"] {
+  background: #00dfc4;
+  color: #223243;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.35),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.lift__simulation__ui {
+  display: none;
+  background: #223243;
+  padding: 1rem;
+}
+
+.floor {
+  border-bottom: 1px solid red;
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  flex-direction: column;
+}
+
+.buttons button {
+  float: left;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.up__button {
+  margin: 5px;
+  font-size: 13px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  background-color: green;
+  color: #ffffff;
+}
+
+.down__button {
+  margin: 5px;
+  font-size: 13px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  background-color: green;
+  color: #ffffff;
+}
+
+.lifts {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.lift {
+  width: 5rem;
+  height: 100%;
+  background-color: var(--color-gray-400);
+  border: 2px solid black;
+  margin-right: 2rem;
+  transition-property: transform;
+  transition-timing-function: ease-in;
+}
+
+.lift_gates {
+  display: flex;
+  height: 100%;
+}
+
+.left_gate,
+.right_gate {
+  width: 100%;
+  height: 100%;
+  margin: 1px;
+  background-color: cadetblue;
+  transition: 2.5s ease-in-out;
+}
+.left_gate-move {
+  transform: translateX(-100%);
+  transition: transform 2.5s ease-in-out;
+}
+
+.right_gate-move {
+  transform: translateX(100%);
+  transition: transform 2.5s ease-in-out;
+}
+
+.active-btn {
+  color: #ffffff;
+  background-color: red;
+}
+
+.back__btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.back__btn button {
+  width: 5rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
